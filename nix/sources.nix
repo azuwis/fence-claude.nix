@@ -38,14 +38,11 @@ builtins.mapAttrs
       builtins.trace "Fetching ${name} ${builtins.toJSON fetchGitArgs}" (builtins.fetchGit fetchGitArgs)
   )
   {
-    agent-sandbox = {
-      url = "https://github.com/azuwis/agent-sandbox.nix";
-    };
     devshell = {
       url = "https://github.com/numtide/devshell";
     };
     nixpkgs = {
       url = "https://github.com/NixOS/nixpkgs";
-      ref = "refs/heads/nixos-25.11";
+      ref = "refs/heads/nixpkgs-unstable";
     };
   }
