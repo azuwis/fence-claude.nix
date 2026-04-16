@@ -22,10 +22,10 @@ fence-claude
 fence-claude <claude_args> -- <fence_args>
 
 # Or run directly without direnv
-nix --extra-experimental-features nix-command run --file default.nix fence-claude -- <claude_args> -- <fence_args>
+"$(nix-build --no-out-link)"/bin/fence-claude <claude_args> -- <fence_args>
 
 # Open a sandboxed shell (for inspecting/testing the sandbox)
-nix --extra-experimental-features nix-command run --file default.nix fence-claude.shell
+"$(nix-build --no-out-link -A shell)"/bin/fence-shell <fence_args>
 ```
 
 ## Configuration
