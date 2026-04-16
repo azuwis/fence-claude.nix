@@ -12,11 +12,8 @@ Nix-based sandboxed environment for [Claude Code](https://claude.ai/code) CLI us
 ## Quick Start
 
 ```bash
-# Enter the development shell (with direnv)
+# Add fence-claude to PATH (with direnv)
 direnv allow
-
-# Or manually
-nix-shell
 
 # Run Claude Code in the sandbox
 fence-claude
@@ -24,7 +21,7 @@ fence-claude
 # Pass arguments to claude and fence
 fence-claude <claude_args> -- <fence_args>
 
-# Or run directly without entering the shell
+# Or run directly without direnv
 nix --extra-experimental-features nix-command run --file default.nix fence-claude -- <claude_args> -- <fence_args>
 
 # Open a sandboxed shell (for inspecting/testing the sandbox)

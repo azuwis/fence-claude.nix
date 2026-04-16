@@ -12,12 +12,9 @@ Enter the development shell:
 ```bash
 # Automatic (with direnv installed)
 direnv allow  # First time only, then auto-loads on directory entry
-
-# Manual
-nix-shell
 ```
 
-Or run directly without entering the shell:
+Or run directly without direnv:
 ```bash
 nix --extra-experimental-features nix-command run --file default.nix fence-claude -- <claude_args> -- <fence_args>
 ```
@@ -36,8 +33,8 @@ nix-instantiate --option tarball-ttl 1 --strict --eval --arg update true nix/sou
 
 ## Architecture
 
-- `default.nix` - Development environment definition with available tools
-- `nix/sources.nix` - Declarative dependency fetching (nixpkgs, devshell)
+- `default.nix` - Main entry point, provides `fence-claude` package
+- `nix/sources.nix` - Declarative dependency fetching (nixpkgs)
 - `nix/sources.lock` - Pinned dependency versions with commit hashes and narHashes
 - `nix/fence-claude.nix` - Fenced Claude Code package with sandbox configuration
 - `.envrc` - direnv configuration for automatic environment loading
@@ -59,6 +56,5 @@ The project uses a custom Nix dependency management approach (via `nix/sources.n
 
 ### Managed Dependencies
 
-Two sources are pinned in `nix/sources.lock`:
+One source is pinned in `nix/sources.lock`:
 - **nixpkgs** (`nixpkgs-unstable` branch) - base package set; `allowUnfreePredicate` enables `claude-code`
-- **devshell** (`numtide/devshell`) - provides `devshell.mkShell`

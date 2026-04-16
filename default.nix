@@ -9,15 +9,10 @@ let
         "claude-code"
       ];
   };
-  devshell = import sources.devshell { nixpkgs = pkgs; };
   fence-claude = pkgs.callPackage ./nix/fence-claude.nix { };
 in
 
-devshell.mkShell {
-  packages = [
-    fence-claude
-  ];
-}
+fence-claude
 // {
   inherit fence-claude;
 }

@@ -38,9 +38,6 @@ builtins.mapAttrs
       builtins.trace "Fetching ${name} ${builtins.toJSON fetchGitArgs}" (builtins.fetchGit fetchGitArgs)
   )
   {
-    devshell = {
-      url = "https://github.com/numtide/devshell";
-    };
     nixpkgs = {
       url = "https://github.com/NixOS/nixpkgs";
       ref = "refs/heads/nixpkgs-unstable";
