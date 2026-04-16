@@ -26,6 +26,9 @@ fence-claude <claude_args> -- <fence_args>
 
 # Or run directly without entering the shell
 nix --extra-experimental-features nix-command run --file default.nix fence-claude -- <claude_args> -- <fence_args>
+
+# Open a sandboxed shell (for inspecting/testing the sandbox)
+nix --extra-experimental-features nix-command run --file default.nix fence-claude.shell
 ```
 
 ## Configuration

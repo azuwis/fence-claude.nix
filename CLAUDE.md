@@ -22,6 +22,11 @@ Or run directly without entering the shell:
 nix --extra-experimental-features nix-command run --file default.nix fence-claude -- <claude_args> -- <fence_args>
 ```
 
+Open a sandboxed shell (for inspecting/testing the sandbox environment):
+```bash
+nix --extra-experimental-features nix-command run --file default.nix fence-claude.shell
+```
+
 ## Dependency Management
 
 Update pinned dependencies:
@@ -50,6 +55,7 @@ The project uses a custom Nix dependency management approach (via `nix/sources.n
 - Sets `NIX_SSL_CERT_FILE` for HTTPS access
 - Uses `bubblewrap` on Linux for namespace isolation (unshares all namespaces) and Apple Sandbox on macOS
 - Provides `fence-claude` wrapper: `fence-claude <claude_args> -- <fence_args>`
+- Provides `fence-claude.shell` passthru: a sandboxed bash shell with the same isolation settings, useful for inspecting/testing the sandbox environment
 
 ### Managed Dependencies
 
