@@ -45,6 +45,7 @@ The project uses a custom Nix dependency management approach (via `nix/sources.n
 
 - Limits the tools available to Claude to an explicit allowlist: `bash`, `cacert`, `coreutils`, `fd`, `findutils`, `git`, `gnugrep`, `gnused`, `jq`, `ripgrep`, `which`
 - Restricts filesystem access: strict deny-read by default, only the Nix closure, working directory, `~/.claude/`, and `~/.claude.json` are accessible
+- Auto-creates `~/.claude.json` with `hasCompletedOnboarding: true` and `~/.claude/` if they don't exist (prevents bind-mount failures and onboarding errors in the sandbox)
 - No network access by default (can be configured in `~/.config/fence/fence.json` or by uncommenting the `network` section in `fence-claude.nix`)
 - Sets `NIX_SSL_CERT_FILE` for HTTPS access
 - Uses `bubblewrap` on Linux for namespace isolation (unshares all namespaces)
