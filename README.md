@@ -1,6 +1,6 @@
 # fence-claude
 
-Nix-based sandboxed environment for [Claude Code](https://claude.ai/code) CLI using [fence](https://github.com/Use-Tusk/fence) and [bubblewrap](https://github.com/containers/bubblewrap).
+Nix-based sandboxed environment for [Claude Code](https://claude.ai/code) CLI using [fence](https://github.com/Use-Tusk/fence) ([bubblewrap](https://github.com/containers/bubblewrap) on Linux, Apple Sandbox on macOS).
 
 ## Features
 
