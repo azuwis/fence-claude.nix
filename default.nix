@@ -9,8 +9,9 @@ let
         "claude-code"
       ];
   };
-  fence-claude = pkgs.callPackage ./nix/fence-claude.nix { };
-  fence-pi = pkgs.callPackage ./nix/fence-pi.nix { };
+  fence-agent = pkgs.callPackage ./nix/fence-agent.nix { };
+  fence-claude = pkgs.callPackage ./nix/fence-claude.nix { inherit fence-agent; };
+  fence-pi = pkgs.callPackage ./nix/fence-pi.nix { inherit fence-agent; };
 in
 
 fence-claude
