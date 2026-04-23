@@ -7,7 +7,9 @@
   bash,
   cacert,
   coreutils,
+  curl,
   fd,
+  file,
   findutils,
   git,
   gnugrep,
@@ -31,7 +33,9 @@
     cacert
     agentPackage
     coreutils
+    curl
     fd
+    file
     findutils
     git
     gnugrep
