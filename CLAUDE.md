@@ -47,7 +47,7 @@ The project uses a custom Nix dependency management approach (via `nix/sources.n
 
 `nix/fence-agent.nix` is a reusable function that uses [fence](https://github.com/Use-Tusk/fence) with `bubblewrap` to sandbox an agent binary. Both `fence-claude` and `fence-pi` are built from it. The sandbox:
 
-- Limits the tools available to the agent to an explicit allowlist: `bash`, `cacert`, `coreutils`, `curl`, `fd`, `file`, `findutils`, `git`, `gnugrep`, `gnused`, `jq`, `ripgrep`, `which`
+- Limits the tools available to the agent to an explicit allowlist: `bash`, `cacert`, `coreutils`, `curl`, `diffutils`, `fd`, `file`, `findutils`, `git`, `gnugrep`, `gnused`, `jq`, `ripgrep`, `which`
 - Restricts filesystem access: strict deny-read by default, only the Nix closure and the configured `allowWrite` paths are accessible
 - For `fence-claude`: write access to `.`, `~/.claude/`, and `~/.claude.json`; auto-creates `~/.claude.json` with `hasCompletedOnboarding: true` (prevents onboarding errors in the sandbox)
 - For `fence-pi`: write access to `.` and `~/.pi`

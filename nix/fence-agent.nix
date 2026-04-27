@@ -8,6 +8,7 @@
   cacert,
   coreutils,
   curl,
+  diffutils,
   fd,
   file,
   findutils,
@@ -34,6 +35,7 @@
     agentPackage
     coreutils
     curl
+    diffutils
     fd
     file
     findutils
